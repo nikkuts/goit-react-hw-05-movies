@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 export const App = () => {
   return (
     <div>
-      <nav>
+      {/* <nav>
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
         <Link to="/products">Products</Link>
@@ -14,7 +14,7 @@ export const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/products" element={<Products />} />
         <Route path="*" element={<NotFound />} />
-      </Routes>
+      </Routes> */}
     </div>
   );
 };
