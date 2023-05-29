@@ -1,7 +1,7 @@
-import { useState, useEffect} from "react";
+import React, { useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import { Circles } from  'react-loader-spinner';
-import api from 'servise/api';
+import API from 'servise/api';
 
 const Home = () => {
     const [trendingMovie, setTrendingMovie] = useState([]);
@@ -13,8 +13,8 @@ const Home = () => {
         setIsRender(false);
 
     try {
-      const {results} = await api.getTrending();
-      setTrendingMovie(results);
+      const {data} = await API.getTrending(); 
+      setTrendingMovie(data.results);
       setIsRender(true);
       } 
       catch (error) {
@@ -33,7 +33,7 @@ const Home = () => {
     isRender &&
       <div>
         {isLoading && <Circles/>}
-      
+
         <ul>
         {trendingMovie.map(({id, title}) => (
             <li key={id}>

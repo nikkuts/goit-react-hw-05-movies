@@ -1,3 +1,4 @@
+import React from "react";
 import { useParams, Link, Outlet } from "react-router-dom";
 
 const MovieDetails = () => {
