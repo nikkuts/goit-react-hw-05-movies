@@ -34,6 +34,7 @@ const Home = () => {
       <div>
         {isLoading && <Circles/>}
 
+        <h1>Trending today</h1>
         <ul>
         {trendingMovie.map(({id, title}) => (
             <li key={id}>
