@@ -26,20 +26,24 @@ const Movies = () => {
     };
 
   return (
+    <div>
       <div>
         <input
         type='text'
         onChange={e => setSearchParams({query: e.target.value})} 
         />
         <button onClick={() => handleFetchMovie(query)}>Search</button>
+      </div>
+      <div>
         {isLoading && <Circles/>}
 
         <ul>
         {queryMovie.map(({id, title}) => (
             <li key={id}>
-            <Link to={`movies/:${id}`}>{title}</Link>
+            <Link to={`:${id}`}>{title}</Link>
             </li>))}
         </ul>
+      </div>
     </div>
   );
 };
