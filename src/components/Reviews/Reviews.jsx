@@ -15,7 +15,7 @@ const Reviews = () => {
       
   try {
     const {data} = await API.getMovieReviews(id); 
-    setMovieReviews(data.results); console.log(data);
+    setMovieReviews(data.results); 
     setIsRender(true);
     } 
     catch (error) {
