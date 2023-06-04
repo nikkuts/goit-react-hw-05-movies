@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { Circles } from  'react-loader-spinner';
 import API from 'servise/api';
@@ -24,6 +24,11 @@ const Movies = () => {
         setIsLoading(false);
       };
     };
+
+    useEffect(() => {
+      query &&
+      handleFetchMovie(query); 
+      }, [query]); 
 
   return (
     <div>
