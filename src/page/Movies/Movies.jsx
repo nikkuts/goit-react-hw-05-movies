@@ -6,6 +6,7 @@ import API from 'servise/api';
 const Movies = () => {
     const [queryMovie, setQueryMovie] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
+    const [searchQuery, setSearchQuery] = useState('');
 
     const [searchParams, setSearchParams] = useSearchParams();
     const query = searchParams.get('query');
@@ -35,9 +36,9 @@ const Movies = () => {
       <div>
         <input
         type='text'
-        onChange={e => setSearchParams({query: e.target.value})} 
+        onChange={(e => setSearchQuery(e.target.value))} 
         />
-        <button onClick={() => handleFetchMovie(query)}>Search</button>
+        <button onClick={() => setSearchParams({query: searchQuery})}>Search</button>
       </div>
       <div>
         {isLoading && <Circles/>}
