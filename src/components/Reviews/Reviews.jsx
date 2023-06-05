@@ -27,8 +27,9 @@ const Reviews = () => {
     handleFetchMovie(fetchId); 
     }, [fetchId]); 
 
-  return (
+  return ( 
     isRender &&
+    movieReviews.length !== 0 ?
      <div>
       <ul>
         {movieReviews.map(({author, content}) => (
@@ -38,7 +39,8 @@ const Reviews = () => {
           </li>
           ))}
       </ul>
-     </div> 
+     </div>
+     : <div>We don't have any reviews for this movie yet</div> 
   );
 };
 

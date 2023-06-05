@@ -11,7 +11,7 @@ const MovieDetails = () => {
 
   const location = useLocation();
   // const backLocation = useRef(location.state?.from?? '/');
-  const backLocation = useRef(location.state? location.state.from: '/');
+  const backLocation = useRef(location.state ? location.state.from : '/');
 
   const { movieId } = useParams(); 
   const fetchId = movieId.slice(1, movieId.length);
