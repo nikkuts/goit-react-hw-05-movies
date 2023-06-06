@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useSearchParams, useLocation } from "react-router-dom";
 import { Circles } from  'react-loader-spinner';
 import API from 'servise/api';
 
@@ -8,6 +8,7 @@ const Movies = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [searchParams, setSearchParams] = useSearchParams();
     const query = searchParams.get('query') ?? '';
+    const location = useLocation();   
 
     async function handleFetchMovie (que) {
         setIsLoading(true);
@@ -53,7 +54,7 @@ const Movies = () => {
         <ul>
         {queryMovie.map(({id, title}) => (
             <li key={id}>
-            <Link to={`:${id}`}>{title}</Link>
+            <Link to={`:${id}`} state={{from: location}}>{title}</Link>
             </li>))}
         </ul>
       </div>

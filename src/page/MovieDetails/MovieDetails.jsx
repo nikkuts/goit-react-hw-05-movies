@@ -9,7 +9,7 @@ const MovieDetails = () => {
   const [isRender, setIsRender] = useState(false);
   const [movieDetails, setMovieDetails] = useState({});
 
-  const location = useLocation();
+  const location = useLocation(); 
   // const backLocation = useRef(location.state?.from?? '/');
   const backLocation = useRef(location.state ? location.state.from : '/');
 
